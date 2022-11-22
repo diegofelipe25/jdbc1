@@ -17,7 +17,7 @@ public class DB {
 				Properties props = loadProperties();
 				String url = props.getProperty("dburl");
 				conn = DriverManager.getConnection(url, props);
-				System.out.println("Conectou");
+				System.out.println("Conectou ao banco");
 			}
 			catch (SQLException e) {
 				throw new DbException(e.getMessage());
@@ -30,7 +30,7 @@ public class DB {
 		if (conn != null) {
 			try {
 				conn.close();
-				System.out.println("Desconectou");
+				System.out.println("Desconectou do banco");
 			} catch (SQLException e) {
 				throw new DbException(e.getMessage());
 			}
